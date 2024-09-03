@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://d7x56xa8vw2m"]
+
+[ext_resource type="Material" uid="uid://cxho7oy8e215p" path="res://redMetal.tres" id="1_07b3m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ltrow"]
+transparency = 1
+depth_draw_mode = 1
+albedo_color = Color(1, 0, 0, 0.321569)
+metallic = 1.0
+roughness = 0.0
+
+[node name="RedRammer" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+material = ExtResource("1_07b3m")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(0.494975, 0, 0.494975, 0, 0.7, 0, -0.494975, 0, 0.494975, 0.446145, 0.12794, 0)
+material = SubResource("StandardMaterial3D_ltrow")

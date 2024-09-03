@@ -1,4 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2savux370jcd"]
+[gd_scene load_steps=9 format=3 uid="uid://b2savux370jcd"]
+
+[ext_resource type="Script" path="res://BasicSpawner.gd" id="1_3yus5"]
+[ext_resource type="PackedScene" uid="uid://d7x56xa8vw2m" path="res://red_rammer.tscn" id="2_7cmpr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g55gd"]
 albedo_color = Color(0.42, 0.42, 0.42, 1)
@@ -8,6 +11,15 @@ albedo_color = Color(0, 0, 0, 0.439216)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g8txi"]
 albedo_color = Color(0.419608, 1, 0.419608, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0esga"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6d6c"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ocx60"]
+albedo_color = Color(0, 0, 1, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -41,14 +53,22 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 18,
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
 light_energy = 2.0
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="GreenSpawner" type="CSGBox3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 9.62514, 0, 10)
 material = SubResource("StandardMaterial3D_g8txi")
+script = ExtResource("1_3yus5")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+[node name="YellowBoss" type="CSGBox3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.205024, 0, -7.72578)
+material = SubResource("StandardMaterial3D_0esga")
+
+[node name="RedSpawner" type="CSGBox3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 1.33895, 0, 10)
-material = SubResource("StandardMaterial3D_g8txi")
+material = SubResource("StandardMaterial3D_m6d6c")
+script = ExtResource("1_3yus5")
+prefab = ExtResource("2_7cmpr")
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+[node name="BlueSpawner" type="CSGBox3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -8.00788, 0, 10)
-material = SubResource("StandardMaterial3D_g8txi")
+material = SubResource("StandardMaterial3D_ocx60")
+script = ExtResource("1_3yus5")
