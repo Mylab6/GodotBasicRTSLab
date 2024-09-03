@@ -1,4 +1,4 @@
-extends CSGBox3D
+extends Node3D
 
 # Public field for the prefab
 @export var prefab: PackedScene
@@ -11,6 +11,7 @@ var spawn_timer: Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+
 	# Initialize the timer
 	spawn_timer = Timer.new()
 	spawn_timer.wait_time = spawn_rate
@@ -25,7 +26,9 @@ func _process(delta: float) -> void:
 
 # Function to spawn the prefab
 func spawn_prefab() -> void:
+	#print("Try spawn")
 	if prefab:
+		print("Found Prefab")
 		var instance = prefab.instantiate()
 		instance.position = self.position
 		get_parent().add_child(instance)

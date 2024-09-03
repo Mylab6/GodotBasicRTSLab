@@ -10,9 +10,7 @@
 [sub_resource type="BoxMesh" id="BoxMesh_ge72i"]
 
 [node name="RedRammer" type="Node3D"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("1_lv7o8")
-target_object_name = "OrangeBoss"
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 physics_material_override = SubResource("PhysicsMaterial_edr2p")
