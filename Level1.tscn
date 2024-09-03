@@ -11,7 +11,7 @@ polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(4, 3, 0), PackedInt32Arr
 [sub_resource type="PlaneMesh" id="PlaneMesh_8bmcl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tn4dh"]
-albedo_color = Color(1, 1, 0.164706, 1)
+albedo_color = Color(0.525051, 0.524294, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6watp"]
 size = Vector3(2, 0.1, 2)
@@ -34,7 +34,7 @@ albedo_color = Color(0, 0, 0, 0.439216)
 [sub_resource type="BoxMesh" id="BoxMesh_m1yad"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ro6w7"]
-albedo_color = Color(1, 0.639216, 0.129412, 1)
+albedo_color = Color(1, 0.639216, 0.854902, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -92,6 +92,7 @@ material = SubResource("StandardMaterial3D_rsoqn")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 25, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
+light_energy = 3.0
 light_volumetric_fog_energy = 8.434
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -107,11 +108,14 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="OrangeBoss"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.89418)
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="OrangeBoss/RigidBody3D"]
 shape = SubResource("BoxShape3D_3idal")
 
-[node name="OrangeBoss" type="MeshInstance3D" parent="OrangeBoss/RigidBody3D"]
+[node name="Vis" type="MeshInstance3D" parent="OrangeBoss/RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.666667, 6)
 mesh = SubResource("BoxMesh_m1yad")
 skeleton = NodePath("../../..")
